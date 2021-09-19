@@ -15,7 +15,7 @@ interface RouteConfig {
 const routes: RouteConfig[] = [
   {
     path: "/",
-    component: () => import("../components/Catalog.vue"),
+    component: () => import("../App.vue"),
     title: "目录页",
   },
   {
