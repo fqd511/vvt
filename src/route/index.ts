@@ -19,9 +19,9 @@ const routes: RouteConfig[] = [
     title: "目录页",
   },
   {
-    path: "/scene",
+    path: "/demo",
     component: () => import("../pages/Home/index.vue"),
-    title: "场景图",
+    title: "demo",
   },
 ];
 

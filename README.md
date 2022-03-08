@@ -11,5 +11,5 @@ This is a project template for Vue 3 + Typescript + Vite
 | Sass | style |
 | Vue-Route | route service |
 | normalize.css | reset css |
-| vite-plugin-components | auto import & register vue components |
+| unplugin-vue-components/vite | auto import & register vue components |
 | Prettier | code format |

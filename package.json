@@ -8,11 +8,11 @@
   "dependencies": {
     "@digvan/c-v-3": "^0.0.9",
     "normalize.css": "^8.0.1",
+    "pnpm": "^6.32.3",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@digvan/util": "^0.0.3",
     "@types/node": "^17.0.21",
     "@vitejs/plugin-vue": "^2.2.2",
     "@vue/compiler-sfc": "^3.2.31",
