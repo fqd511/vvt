@@ -1,10 +1,12 @@
 import App from "./App.vue";
-import routes from "./route/index";
 import "normalize.css";
-import { createRouter, createWebHistory } from "vue-router";
+import { setupLayouts } from 'virtual:generated-layouts'
+import generatedRoutes from 'virtual:generated-pages'
 
-// TODO:(fanqidi:2022/3/9) use auto import to avoid vue-router
+const head = createHead()
+const routes = setupLayouts(generatedRoutes)
 
 createApp(App)
+  .use(head)
   .use(createRouter({ routes, history: createWebHistory() }))
   .mount("#app");

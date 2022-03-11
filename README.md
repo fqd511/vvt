@@ -21,14 +21,4 @@ This is a project template for Vue 3 + Typescript + Vite
 
 - [ ] dependency
   - [ ] unocss
-  - [ ] inspect
-  - [ ] vite-plugin-vue-layouts
-- [ ] component
-  - [ ] 配置检测 component 目录和 pages 下 component 目录 验证 component.d.ts
-- [ ] auto-import
-  - [ ] 处理 main 中的 vue-route
-- [ ] i18n
-  - [ ] 语言配置文件测试
-- [ ] optimizeDeps字段
-- [ ] useHead
 - [ ] useCore

@@ -1,9 +1,9 @@
 <template>
-  <router-link to="home">Home</router-link>
-  <router-link to="demo">Demo</router-link>
   <router-view />
 </template>
-
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped></style>
+<script setup lang="ts">
+useHead({
+  title: "vvt",
+  meta: [{ name: "description", content: "Van's Vue-Vite-TypeScript Project" }],
+});
+</script>
