@@ -9,20 +9,15 @@ import AutoImport from "unplugin-auto-import/vite";
 import Prism from "markdown-it-prism";
 import LinkAttributes from "markdown-it-link-attributes";
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
+import Unocss from "unocss/vite";
 
 const root = path.resolve(__dirname, "./src");
 
-// const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
-const markdownWrapperClasses = "markdown";
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
     }),
-
-    // https://github.com/antfu/unplugin-vue-components
     Components({
       dirs: ["src/**/components"],
       deep: true,
@@ -32,14 +27,11 @@ export default defineConfig({
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
       dts: "src/components.d.ts",
     }),
-
-    // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ["vue", "md"],
       exclude: ["**/components/*.vue"],
     }),
     Layouts(),
-    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -71,9 +63,7 @@ export default defineConfig({
       dts: "src/auto-imports.d.ts",
     }),
 
-    // https://github.com/antfu/vite-plugin-md
     Markdown({
-      wrapperClasses: markdownWrapperClasses,
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/
@@ -87,8 +77,7 @@ export default defineConfig({
         });
       },
     }),
-
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
+    Unocss(),
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,

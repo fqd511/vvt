@@ -5,6 +5,8 @@ import generatedRoutes from "virtual:generated-pages";
 import messages from "@intlify/vite-plugin-vue-i18n/messages";
 import { createI18n } from "vue-i18n";
 
+import 'uno.css'
+
 const head = createHead();
 const routes = setupLayouts(generatedRoutes);
 const i18n = createI18n({
