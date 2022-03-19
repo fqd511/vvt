@@ -87,14 +87,17 @@ export default defineConfig({
   optimizeDeps: {
     include: ["vue", "vue-router", "@vueuse/core", "@vueuse/head"],
   },
-
+  resolve: {
+    alias: {
+      "~/": `${path.resolve(__dirname, "src")}/`,
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `
         @import "${root}/style/mixin";
-        @import "${root}/style/variable";
-        @import "${root}/style/common";`,
+        @import "${root}/style/variable";`,
       },
     },
   },
