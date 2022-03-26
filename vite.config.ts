@@ -2,8 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import path from "path";
-import Pages from "vite-plugin-pages";
-import Layouts from "vite-plugin-vue-layouts";
 import Markdown from "vite-plugin-md";
 import AutoImport from "unplugin-auto-import/vite";
 import Prism from "markdown-it-prism";
@@ -27,11 +25,6 @@ export default defineConfig({
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
       dts: "src/components.d.ts",
     }),
-    Pages({
-      extensions: ["vue", "md"],
-      exclude: ["**/components/*.vue"],
-    }),
-    Layouts(),
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
