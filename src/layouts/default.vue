@@ -1,16 +1,7 @@
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
+  <main class="outside-container">
     <div class="container m-x-auto p-y-4">
-      <div class="container flex justify-end">
-        <button
-          class="i-ic-baseline-translate m-2 !outline-none text-current"
-          @click="toggleLocales"
-        ></button>
-        <button
-          class="m-2 !outline-none i-ic-baseline-wb-sunny dark:i-ic-baseline-dark-mode text-current"
-          @click="toggleDark()"
-        ></button>
-      </div>
+      <TopBar />
     </div>
     <div
       class="flex items-center justify-center p-2 text-gray-900 dark:text-gray-200"
@@ -24,14 +15,9 @@
 </template>
 
 <script setup lang="ts">
-import { toggleDark } from "~/composables";
+import TopBar from "~/components/TopBar.vue";
 
 const { t } = useI18n();
-const { availableLocales, locale } = useI18n();
-const toggleLocales = () => {
-  const locales = availableLocales;
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
-};
 </script>
 
 <style lang="scss" scoped>
