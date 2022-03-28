@@ -19,7 +19,7 @@
       <router-link to="/demo">{{ t("demo") }}</router-link>
       <router-link to="/detail">{{ t("detail") }}</router-link>
     </div>
-    <router-view />
+    <slot>Content is empty</slot>
   </main>
 </template>
 
