@@ -2,11 +2,15 @@
   <div class="container flex justify-end">
     <button
       class="i-ic-baseline-translate m-2 !outline-none text-current"
+      @keydown.enter.native.once="toggleLocales"
       @click="toggleLocales"
+      tabindex="0"
     ></button>
     <button
       class="m-2 !outline-none i-ic-baseline-wb-sunny dark:i-ic-baseline-dark-mode text-current"
+      @keydown.enter.native.once="toggleDark()"
       @click="toggleDark()"
+      tabindex="0"
     ></button>
   </div>
 </template>
