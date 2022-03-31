@@ -10,6 +10,12 @@ html.dark {
   background: #121212;
 }
 
+*:focus {
+  outline: $primary_color solid 2px;
+  outline-offset: -2px;
+}
+
 [class*="i-"] {
   cursor: pointer;
+  color: currentColor;
 }

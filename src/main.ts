@@ -9,7 +9,7 @@ import Demo from '~/pages/demo/index.vue';
 import NotFound from '~/pages/404.vue';
 
 import "uno.css";
-import "~/style/common.css";
+import "~/style/common.scss";
 
 const head = createHead();
 

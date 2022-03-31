@@ -24,3 +24,8 @@ const toggleLocales = () => {
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
 };
 </script>
+<style lang="scss" scoped>
+button:focus {
+  color: $primary_color;
+}
+</style>
