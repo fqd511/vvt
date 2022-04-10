@@ -9,3 +9,4 @@ package-lock.json
 .idea
 /.pnpm-debug.log
 /.eslintrc-auto-import.json
+.husky
