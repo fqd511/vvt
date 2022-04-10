@@ -12,6 +12,7 @@ import Unocss from "unocss/vite";
 const root = path.resolve(__dirname, "./src");
 
 export default defineConfig({
+  base: "/vvt/",
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
