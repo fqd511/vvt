@@ -1,10 +1,7 @@
 node_modules
 .DS_Store
-dist
-dist-ssr
 *.local
 .eslintcache
-
 package-lock.json
 .idea
 /.pnpm-debug.log
