@@ -2,10 +2,10 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module 'vue' {
+declare module "vue" {
   export interface GlobalComponents {
-    TopBar: typeof import('./components/TopBar.vue')['default']
+    TopBar: typeof import("./components/TopBar.vue")["default"];
   }
 }
 
-export { }
+export {};

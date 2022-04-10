@@ -1,5 +1,7 @@
 # vvt
 
+![Github Action Build Status](https://github.com/fqd511/vvt/workflows/Build/badge.svg?branch=master)
+
 This is a project template for Vue 3 + Typescript + Vite
 
 ## Setting from `vite`

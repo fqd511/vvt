@@ -2,15 +2,15 @@
   <div class="container flex justify-end">
     <button
       class="i-ic-baseline-translate m-2 !outline-none text-current"
+      tabindex="0"
       @keydown.enter.native.once="toggleLocales"
       @click="toggleLocales"
-      tabindex="0"
     ></button>
     <button
       class="m-2 !outline-none i-ic-baseline-wb-sunny dark:i-ic-baseline-dark-mode text-current"
+      tabindex="0"
       @keydown.enter.native.once="toggleDark()"
       @click="toggleDark()"
-      tabindex="0"
     ></button>
   </div>
 </template>
@@ -26,6 +26,6 @@ const toggleLocales = () => {
 </script>
 <style lang="scss" scoped>
 button:focus {
-  color: $primary_color;
+  color: $primary-color;
 }
 </style>

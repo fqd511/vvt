@@ -1,0 +1,15 @@
+package.json
+/dist
+.DS_Store
+.eslintignore
+.gitignore
+.prettierignore
+.eslintcache
+package-lock.json
+tsconfig.json
+.idea
+.husky
+.eslintrc-auto-import.json
+pnpm-lock.yaml
+.pnpm-debug.log
+public

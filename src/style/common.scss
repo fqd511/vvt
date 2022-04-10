@@ -11,13 +11,13 @@ html.dark {
 }
 
 *:focus {
-  outline: $primary_color solid 2px;
+  outline: $primary-color solid 2px;
   outline-offset: -2px;
 }
 
 [class*="i-"] {
   cursor: pointer;
-  color: currentColor;
+  color: currentcolor;
 }
 
 .no-scroll-bar {

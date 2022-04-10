@@ -15,7 +15,16 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "npm run lint:script && npm run lint:style && npm run lint:prettier",
+    "lint:script": "eslint --cache --ext .js,.ts,.vue ./src",
+    "lint:style": "stylelint \"src/**/*.scss\"",
+    "lint:prettier": "prettier -c \"src/**/*.{js,ts,vue,json,css,scss,less,md}\"",
+    "lint:fix": "npm run lint:fix-script && npm run lint:fix-style",
+    "lint:fix-script": "eslint --fix --cache --ext .js,.ts,.vue ./src",
+    "lint:fix-style": "stylelint --fix \"src/**/*.scss\"",
+    "lint:fix-prettier": "prettier -c --write \"**/*\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
@@ -31,13 +40,25 @@
     "@intlify/vite-plugin-vue-i18n": "^3.3.1",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
     "@unocss/preset-icons": "^0.28.3",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/compiler-sfc": "^3.2.31",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "markdown-it-link-attributes": "^4.0.0",
     "markdown-it-prism": "^2.2.3",
+    "postcss": "^8.4.12",
     "prettier": "2.5.1",
     "sass": "^1.49.9",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^3.0.0",
     "typescript": "^4.6.2",
     "unocss": "^0.28.3",
     "unplugin-auto-import": "^0.6.6",
@@ -45,5 +66,22 @@
     "vite": "^2.8.6",
     "vite-plugin-md": "^0.11.9",
     "vue-tsc": "^0.29.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,css,scss}": [
+      "prettier --write",
+      "pnpm run lint:style",
+      "git add"
+    ],
+    "*.{js,ts,vue}": [
+      "prettier --write",
+      "pnpm run lint:script",
+      "git add -A"
+    ]
   }
 }

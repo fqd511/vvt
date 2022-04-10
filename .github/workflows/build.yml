@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  setup:
+    name: setup envrioment and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 6.15.1
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          registry-url: https://registry.npmjs.org/
+          cache: "pnpm"
+
+      - name: install
+        run: pnpm install
+
+      - name: build
+        run: pnpm build
+
+      #      - name: creat cname
+      #        run: |
+      #          touch dist/CNAME
+      #          echo "www.fanqidi.com" > dist/CNAME
+
+      - name: Publish dist to gh-pages
+        uses: rayluo/github-pages-overwriter@v1.2
+        with:
+          source-directory: dist
