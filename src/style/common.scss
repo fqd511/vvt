@@ -15,6 +15,10 @@ html.dark {
   outline-offset: -2px;
 }
 
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
 [class*="i-"] {
   cursor: pointer;
   color: currentcolor;
